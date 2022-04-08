@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Invoice Creator</title>
 </head>
+
 <body>
-    <main>
+    <header>
         <h1>Invoice Creator</h1>
+        <h2>Thanks for choosing GoodCorp, LLC!</h2>
+    </header>
+    <main>
+        <form action="">
+            <div class="buttons-container">
+                <button type="button" value="10" class="addBtn">Wash Car: $10</button>
+                <button type="button" value="20" class="addBtn">Mow Lawn: $20</button>
+                <button type="button" value="30" class="addBtn">Pull Weeds: $30</button>
+            </div>
+
+            <div class="display-container">
+                <ul>
+                    <li class="description">
+                        <p>TASK</p>
+                        <p>TOTAL</p>
+                    </li>
+                </ul>
+            <!-- items display -->
+                <ul id="display">
+                </ul>
+
+                <hr>
+                <ul>
+                    <li class="total">
+                        <p>NOTES</p>
+                        <P>TOTAL AMOUNT</P>
+                    </li>
+                </ul>
+                <!-- total display -->
+                <p class="grand-total-display">$0</p>
+            </div>
+            <!-- submit button -->
+            <button type="submit" id="submit-button" class="submit-button" disabled="true">Send Invoice</button>
+        </form>
+
     </main>
     <script src="app.js"></script>
 </body>
+
 </html>
