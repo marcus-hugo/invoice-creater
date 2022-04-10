@@ -40,6 +40,8 @@ function calcTotal(services) {
         itemsTotal = parseInt(services[0].amount) + parseInt(services[1].amount);
     } else if (services.length === 3) {
         itemsTotal = parseInt(services[0].amount) + parseInt(services[1].amount) + parseInt(services[2].amount);
+    } else {
+        itemsTotal = '0';
     }
 }
 
@@ -77,15 +79,15 @@ function removeButtons(services) {
           
             for (let button of addBtns) {
                 if (removeBtns[i].id === button.id) {
-                    button.classList.remove('diabled');
+                    button.classList.remove('disabled');
                     button.disabled = false;
                 }
             }
             addBtnsArr.splice(serviceIndex, 1)
             servicesArr.splice(serviceIndex, 1);
-
             renderItems(servicesArr);
             isServicesZero(servicesArr);
+            console.log(servicesArr)
         })
     }
 }
@@ -94,7 +96,7 @@ function isServicesZero(services) {
     if (services.length === 0) {
         submitBtn.classList.add('disabled');
         submitBtn.disabled = true;
-
+        // grandTotal.innerText = ''
         for (let btn of addBtns) {
             btn.classList.remove('disabled')
             btn.disabled = false;
