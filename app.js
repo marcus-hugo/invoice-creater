@@ -31,6 +31,8 @@ submitBtn.addEventListener('click', function (e) {
         btn.classList.remove('disabled');
         btn.disabled = false;
     }
+    submitBtn.classList.add('disabled');
+    submitBtn.disabled = true;
 })
 
 function calcTotal(services) {
@@ -47,7 +49,7 @@ function calcTotal(services) {
 
 function renderItems(services) {
     let listItems = '';
-    
+
     for (let i = 0; i < services.length; i++) {
         listItems += `
             <li class="rendered-items">
@@ -60,7 +62,7 @@ function renderItems(services) {
     calcTotal(servicesArr);
     ul.innerHTML = listItems;
     grandTotal.innerText = itemsTotal.toString().replace('', '$');
-    
+
     if (services.length >= 1 && services.length <= 3) {
         submitBtn.classList.remove('disabled');
         submitBtn.disabled = false;
@@ -76,7 +78,7 @@ function removeButtons(services) {
             // finds the add button index based on a conditional
             let findServiceIndex = (services) => services.amount === removeBtns[i].id;
             let serviceIndex = services.findIndex(findServiceIndex);
-          
+
             for (let button of addBtns) {
                 if (removeBtns[i].id === button.id) {
                     button.classList.remove('disabled');
